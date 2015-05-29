@@ -6,7 +6,7 @@ var __extends = this.__extends || function (d, b) {
 };
 
 var observable = require("data/observable");
-var LocalSettings = require("local-settings");
+var AppSettings = require("application-settings");
 var validationModule = require("../utils/validate");
 
 var addCommentViewModel = (function (_super) {
@@ -28,7 +28,7 @@ var addCommentViewModel = (function (_super) {
         {
             if (this._activity !== value) {
                 this._activity = value;
-                this.notify({ object: this, eventName: observable.knownEvents.propertyChange, propertyName: "activity", value: value });
+                this.notify({ object: this, eventName: observable.Observable.propertyChangeEvent, propertyName: "activity", value: value });
             }
         }
     });
@@ -42,13 +42,13 @@ var addCommentViewModel = (function (_super) {
         {
             if (this._commentText !== value) {
                 this._commentText = value;
-                this.notify({ object: this, eventName: observable.knownEvents.propertyChange, propertyName: "commentText", value: value });
+                this.notify({ object: this, eventName: observable.Observable.propertyChangeEvent, propertyName: "commentText", value: value });
             }
         }
     });
          
     addCommentViewModel.prototype.addComment = function () {
-        var userId = LocalSettings.getString(USER_ID);
+        var userId = AppSettings.getString(USER_ID);
         var data = EVERLIVE.data('Comments');
 
         var that = this;

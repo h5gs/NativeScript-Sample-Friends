@@ -12,7 +12,7 @@
             <ListView.itemTemplate>
                 <GridLayout columns="auto, *" >
                     <StackLayout>
-                        <Image imageSource="{{ avatarImageSource || defaultAvatarImageSource }}" stretch="fill" cssClass="activity-avatar"/>
+                        <Image src="{{ avatarImageSource || defaultAvatarImageSource }}" stretch="fill" cssClass="activity-avatar"/>
                     </StackLayout>
                     <StackLayout cssClass="activity-container" col="1">
                         <Label cssClass="activity-name">
@@ -25,8 +25,8 @@
                               </Label.formattedText>
                         </Label>
                         <Label text="{{ Text }}" cssClass="activity-summary" textWrap="true"/>
-                        <Image imageSource="{{ pictureImageSource || '' }}" cssClass="activity-picture android" stretch="aspectFit" />
-                        <Image imageSource="{{ pictureImageSource || '' }}" cssClass="activity-picture ios" stretch="aspectFit" height="{{ hasPicture ? pictureImageHeight : 0 }}" />
+                        <Image src="{{ pictureImageSource || '' }}" cssClass="activity-picture android" stretch="aspectFit" height="{{ hasPicture ? pictureImageHeight : 0 }}" />
+                        <Image src="{{ pictureImageSource || '' }}" cssClass="activity-picture ios" stretch="aspectFit" height="{{ hasPicture ? pictureImageHeight : 0 }}" />
                         <Label text="{{ CreatedAt, CreatedAt | dateConverter('DD.MM.YYYY') }}" cssClass="activity-date"/>
                   </StackLayout>
                 </GridLayout> 

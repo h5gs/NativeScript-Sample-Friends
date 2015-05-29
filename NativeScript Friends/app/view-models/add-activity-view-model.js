@@ -7,7 +7,7 @@ var __extends = this.__extends || function (d, b) {
 
 var observable = require("data/observable");
 var validationModule = require("../utils/validate");
-var LocalSettings = require("local-settings");
+var AppSettings = require("application-settings");
 
 var AddActivityViewModel = (function (_super) {
     __extends(AddActivityViewModel, _super);
@@ -19,7 +19,7 @@ var AddActivityViewModel = (function (_super) {
     }
 
     AddActivityViewModel.prototype.addActivity = function () {
-        var userId = LocalSettings.getString(USER_ID);
+        var userId = AppSettings.getString(USER_ID);
         var data = EVERLIVE.data('Activities');
 
         var that = this;

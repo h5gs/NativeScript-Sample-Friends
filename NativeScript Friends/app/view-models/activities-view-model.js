@@ -53,7 +53,7 @@ var ActivitiesViewModel = (function (_super) {
         },
         set: function(value) {
             this._isLoading = value;
-            this.notify({ object: this, eventName: observable.knownEvents.propertyChange, propertyName: "isLoading", value: value });
+            this.notify({ object: this, eventName: observable.Observable.propertyChangeEvent, propertyName: "isLoading", value: value });
         },
         enumerable: true,
         configurable: true

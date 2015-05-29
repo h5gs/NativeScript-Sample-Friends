@@ -11,9 +11,8 @@
                     </GridLayout>
                     
                     <GridLayout columns="auto, auto" col="2" cssClass="align-right align-top">
-                        <GridLayout tap="deleteButtonClicked" width="50" >
-                            <Image src="~/res/delete.png" cssClass="header-button margin" 
-                                visibility="{{ userCanDeleteActivity ? 'visible' : 'collapsed' }}" />
+                        <GridLayout tap="deleteButtonClicked" width="50" visibility="{{ userCanDeleteActivity ? 'visible' : 'collapsed' }}">
+                            <Image src="~/res/delete.png" cssClass="header-button margin" />
                         </GridLayout>
                         
                         <GridLayout tap="commentButtonClicked" width="50" col="1">
@@ -45,7 +44,7 @@
                                 <Label.formattedText>
                                     <FormattedString>
                                       <FormattedString.spans>
-                                        <Span text="{{ UserName }}" fontAttributes="Bold" />
+                                        <Span text="{{ User.DisplayName }}" fontAttributes="Bold" />
                                       </FormattedString.spans>
                                     </FormattedString>
                                 </Label.formattedText>

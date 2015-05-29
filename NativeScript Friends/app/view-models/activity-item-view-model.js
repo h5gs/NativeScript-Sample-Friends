@@ -61,7 +61,7 @@ var ActivityItemViewModel = (function (_super){
                             completed: function (result, key) {
                                 if (responsiveImagesUrl === key) {                                    
                                     that._pictureImageSource = result;
-                                    that.notify({ object: that, eventName: observable.knownEvents.propertyChange, propertyName: "pictureImageSource", value: that._pictureImageSource });
+                                    that.notify({ object: that, eventName: observable.Observable.propertyChangeEvent, propertyName: "pictureImageSource", value: that._pictureImageSource });
                                 }
                             }
                         });
@@ -76,7 +76,7 @@ var ActivityItemViewModel = (function (_super){
         get: function () {
             if (this._source) {
                 this._userName = this._source.User.DisplayName;
-                this.notify({ object: this, eventName: observable.knownEvents.propertyChange, propertyName: "userName", value: this._userName });
+                this.notify({ object: this, eventName: observable.Observable.propertyChangeEvent, propertyName: "userName", value: this._userName });
             }
             return this._userName;        
         }
@@ -106,14 +106,16 @@ var ActivityItemViewModel = (function (_super){
                             completed: function (result, key) {
                                 if (responsiveImagesUrl === key) {                                    
                                     that._avatarImageSource = result;
-                                    that.notify({ object: that, eventName: observable.knownEvents.propertyChange, propertyName: "avatarImageSource", value: that._avatarImageSource });
+                                    that.notify({ object: that, eventName: observable.Observable.propertyChangeEvent, propertyName: "avatarImageSource", value: that._avatarImageSource });
                                 }
                             }
                         });
                     }
                 }
             }
-
+            
+            alert();
+            
             return this._avatarImageSource;
         }
     });
@@ -132,10 +134,10 @@ var ActivityItemViewModel = (function (_super){
 
 //ScaleFactor define how many times the width of the image to be smaller than the screen width. Height is automatically adjusted. 
 function getResponsiveUrl (url, targetWidth) {
-    if(typeof(url) === 'undefined' && typeof(targetWidth) === 'undefined'){
+    if (typeof(url) === 'undefined' && typeof(targetWidth) === 'undefined') {
         return '';
     }
-        
+
     return "https://bs1.cdn.telerik.com/image/v1/" + BS_API_KEY + "/resize=w:" + targetWidth + "/" + url;
 }
 

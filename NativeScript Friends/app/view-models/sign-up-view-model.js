@@ -8,7 +8,7 @@ var __extends = this.__extends || function (d, b) {
 var observable = require("data/observable");
 var dialogs = require("ui/dialogs");
 var validationModule = require("../utils/validate");
-var LocalSettings = require("local-settings");
+var AppSettings = require("application-settings");
 
 var SignUpViewModel = (function (_super){
     
@@ -49,10 +49,10 @@ var SignUpViewModel = (function (_super){
 
                     EVERLIVE.Users.login(that._email, that._password, 
                         function (data) {
-
+                            
                             //Store in local storage
-                            LocalSettings.setString(TOKEN_DATA_KEY, data.result.access_token);
-                            LocalSettings.setString(USER_ID, data.result.principal_id);
+                            AppSettings.setString(TOKEN_DATA_KEY, data.result.access_token);
+                            AppSettings.setString(USER_ID, data.result.principal_id);
                             
                             that.set("isLoading", false);
 
@@ -62,6 +62,7 @@ var SignUpViewModel = (function (_super){
                             that.set("email", "");
                             that.set("gender", "");
                             that.set("about", "");
+                            
                             resolve();
                         },
                         function(error) {

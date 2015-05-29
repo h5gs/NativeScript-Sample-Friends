@@ -9,7 +9,7 @@ var observable = require("data/observable");
 var Everlive = require("../lib/everlive.all.min");
 var dialogs = require("ui/dialogs");
 var validationModule = require("../utils/validate");
-var LocalSettings = require("local-settings");
+var AppSettings = require("application-settings");
 
 var MainViewModel = (function (_super){
     
@@ -24,7 +24,7 @@ var MainViewModel = (function (_super){
         var everliveOptions = {
                                   apiKey: BS_API_KEY,
                                   scheme: BS_SCHEME,
-                                  token: LocalSettings.getString(TOKEN_DATA_KEY)
+                                  token: AppSettings.getString(TOKEN_DATA_KEY)
                               };
 
         if(BS_URL){
@@ -48,8 +48,8 @@ var MainViewModel = (function (_super){
                 function (data) {
                     if (typeof(data.result) !== 'undefined' && typeof(data.result.principal_id) !== 'undefined' && typeof(data.result.access_token) !== 'undefined') {
                         //Store in local storage
-                        LocalSettings.setString(TOKEN_DATA_KEY, data.result.access_token);
-                        LocalSettings.setString(USER_ID, data.result.principal_id);
+                        AppSettings.setString(TOKEN_DATA_KEY, data.result.access_token);
+                        AppSettings.setString(USER_ID, data.result.principal_id);
                         
                         resolve();
                     } else {

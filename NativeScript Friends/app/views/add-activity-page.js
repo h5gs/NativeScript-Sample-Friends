@@ -2,7 +2,7 @@ var vmModule = require("../view-models/add-activity-view-model");
 var frameModule = require("ui/frame");
 var platformModule = require("platform");
 var Everlive = require("../lib/everlive.all.min");
-var LocalSettings = require("local-settings");
+var AppSettings = require("application-settings");
 var viewModule = require("ui/core/view");
 var viewModel;
 
@@ -25,7 +25,7 @@ function setFocusToTextField() {
 }
 
 function verifyUserPermissions(){
-    var userId = LocalSettings.getString(USER_ID);
+    var userId = AppSettings.getString(USER_ID);
     if(typeof(userId) === 'undefined' || userId === ""){
         frameModule.topmost().navigate("views/main-page");
     }
