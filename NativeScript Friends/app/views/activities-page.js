@@ -3,7 +3,7 @@ var frameModule = require("ui/frame");
 var view = require("ui/core/view");
 var observable = require("data/observable");
 var platformModule = require("platform");
-var LocalSettings = require("local-settings");
+var AppSettings = require("application-settings");
 
 var viewModel;
 
@@ -31,8 +31,8 @@ function logout(args){
        
     frameModule.topmost().navigate("views/main-page");
     
-    LocalSettings.setString(TOKEN_DATA_KEY, "");
-    LocalSettings.setString(USER_ID, "");
+    AppSettings.setString(TOKEN_DATA_KEY, "");
+    AppSettings.setString(USER_ID, "");
 }
 
 exports.pageNavigatedTo = pageNavigatedTo;
