@@ -137,6 +137,11 @@ function getResponsiveUrl (url, targetWidth) {
     if (typeof(url) === 'undefined' && typeof(targetWidth) === 'undefined') {
         return '';
     }
+    
+    // if using custom BS_URL for testing purposes, return the original url
+    if (BS_URL) {
+        return url;
+    }
 
     return "https://bs1.cdn.telerik.com/image/v1/" + BS_API_KEY + "/resize=w:" + targetWidth + "/" + url;
 }
