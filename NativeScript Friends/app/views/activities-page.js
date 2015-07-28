@@ -7,7 +7,7 @@ var AppSettings = require("application-settings");
 
 var viewModel;
 
-function pageNavigatedTo(args) {
+function pageNavigatingTo(args) {
     var page = args.object;
     viewModel = new vmModule.ActivitiesViewModel();
     page.bindingContext = viewModel;
@@ -35,7 +35,7 @@ function logout(args){
     AppSettings.setString(USER_ID, "");
 }
 
-exports.pageNavigatedTo = pageNavigatedTo;
+exports.pageNavigatingTo = pageNavigatingTo;
 exports.onActivityTap = onActivityTap;
 exports.logout = logout;
 exports.addActivity = addActivity;

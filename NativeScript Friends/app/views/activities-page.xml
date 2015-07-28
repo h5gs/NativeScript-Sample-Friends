@@ -1,4 +1,4 @@
-<Page xmlns="http://www.nativescript.org/tns.xsd" navigatedTo="pageNavigatedTo">
+<Page xmlns="http://www.nativescript.org/tns.xsd" navigatingTo="pageNavigatingTo">
     <GridLayout rows="auto, auto, *">
         <GridLayout cssClass="header-container" columns="auto, *, auto">
             <Label text="LOGOUT" tap="logout" cssClass="header-text align-left ios" />
@@ -25,7 +25,7 @@
                               </Label.formattedText>
                         </Label>
                         <Label text="{{ Text }}" cssClass="activity-summary" textWrap="true"/>
-                        <Image src="{{ pictureImageSource || '' }}" cssClass="activity-picture android" stretch="aspectFit" height="{{ hasPicture ? pictureImageHeight : 0 }}" />
+                        <Image src="{{ pictureImageSource || '' }}" cssClass="activity-picture android" stretch="aspectFit" />
                         <Image src="{{ pictureImageSource || '' }}" cssClass="activity-picture ios" stretch="aspectFit" height="{{ hasPicture ? pictureImageHeight : 0 }}" />
                         <Label text="{{ CreatedAt, CreatedAt | dateConverter('DD.MM.YYYY') }}" cssClass="activity-date"/>
                   </StackLayout>
