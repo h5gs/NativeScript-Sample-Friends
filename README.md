@@ -2,6 +2,9 @@ Friends Sample App for NativeScript
 =============================
 This repository contains the [Friends sample app](http://docs.telerik.com/platform/backend-services/samples/friends/friends-sample). The Friends app is a sample mobile app showcasing the integration of Telerik Platform services into a native mobile appllication using [the NativeScript framework](http://github.com/nativescript/nativescript). To download the source code, just click on the "Download ZIP" button.
 
+[![](http://docs.telerik.com/platform/appbuilder/sample-apps/images/try-in-appbuilder.png)](https://platform.telerik.com/#appbuilder/clone/https%3A%2F%2Fgithub.com%2FNativeScript%2Fsample-Friends.git)
+
+
 ## Showcased features and SDKs
 
 Here is a list of the features that are showcased in the Friends sample app:
