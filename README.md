@@ -2,8 +2,6 @@ Friends Sample App for NativeScript
 =============================
 This repository contains the [Friends sample app](http://docs.telerik.com/platform/backend-services/samples/friends/friends-sample). The Friends app is a sample mobile app showcasing the integration of Telerik Platform services into a native mobile appllication using [the NativeScript framework](http://github.com/nativescript/nativescript). To download the source code, just click on the "Download ZIP" button.
 
-[![](http://docs.telerik.com/platform/appbuilder/sample-apps/images/try-in-appbuilder.png)](https://platform.telerik.com/#appbuilder/clone/https%3A%2F%2Fgithub.com%2FNativeScript%2Fsample-Friends.git)
-
 
 ## Showcased features and SDKs
 
@@ -21,16 +19,6 @@ To implement all the features listed above, the sample app utilizes the followin
 - Telerik Backend Services JavaScript SDK - used to work with Telerik Backend Services.
 - Custom Analytics plugin in Telerik AppBuilder.
 
-## Requirements  
-
-The following is a list of requirements for the sample app:
-
-- **Active Telerik Platform account**  
-To use this sample app you must have an active Telerik Platform account. Depending on your license you may not be able to use all features of the app. For more information on what is included in the different editions, please check out the pricing page for the respective product. All features included in the sample app will work in the free trial period. Go to [http://platform.telerik.com](http://platform.telerik.com) for more info.
-
-- **Telerik AppBuilder**  
-Telerik AppBuilder In-Browser Client, Windows Client or Visual Studio Extension.
-
 ## Configuring the sample app
 The Friends sample app comes fully functional, but to see it in action you must link it to your own Telerik Platform account.
 
@@ -45,8 +33,5 @@ To set the API key open the /app/app.js file and replace $EVERLIVE_API_KEY$ with
 This step is optional, it links the sample mobile app to a Telerik Analytics project in your account. Just find the $EQATEC_PRODUCT_KEY$ placeholder in the code and replace it with a product key of Analytics Javascript project. If you do not set this the sample will still work, but no analytics data will collected.
 
 By default the Friends Sample is configured to use HTTP. In case you wish to switch to HTTPS please update the global.BS_SCHEME setting in the /app/app.js file to "https".
-
-## Running the sample app
-Once the app is configured as described in the previous section, you can run it either on a real device or in the Telerik AppBuilder simulator. See more info how in this [help article](http://docs.telerik.com/platform/appbuilder/sample-apps/clone-sample-app).
 
 > Make sure the emulator or the device you use have working Internet connection when running the sample. Internet connection is necessary in order to connect to the cloud.
