@@ -1,4 +1,4 @@
-<Page xmlns="http://www.nativescript.org/tns.xsd" navigatedTo="pageNavigatedTo">
+<Page xmlns="http://www.nativescript.org/tns.xsd" navigatedTo="pageNavigatedTo" actionBarHidden="true">
     <GridLayout rows="auto,auto,auto, *">
         <GridLayout cssClass="header-container" columns="auto, *, auto">
             <Label text="CANCEL" tap="backButtonClicked" cssClass="header-text align-left ios" />

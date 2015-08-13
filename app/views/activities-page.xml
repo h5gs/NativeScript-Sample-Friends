@@ -1,4 +1,4 @@
-<Page xmlns="http://www.nativescript.org/tns.xsd" navigatingTo="pageNavigatingTo">
+<Page xmlns="http://www.nativescript.org/tns.xsd" navigatingTo="pageNavigatingTo" actionBarHidden="true">
     <GridLayout rows="auto, auto, *">
         <GridLayout cssClass="header-container" columns="auto, *, auto">
             <Label text="LOGOUT" tap="logout" cssClass="header-text align-left ios" />

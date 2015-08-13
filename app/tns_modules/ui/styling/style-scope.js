@@ -31,9 +31,14 @@ var StyleScope = (function () {
         this._css = this._css ? this._css + cssString : cssString;
         this._cssFileName = cssFileName;
         this._reset();
-        if (!this._cssSelectors) {
+        // Applies fix from https://github.com/NativeScript/NativeScript/pull/476/
+        // Will be released with {N} v1.3
+        if (application.cssSelectorsCache) {
+            this._cssSelectors = StyleScope._joinCssSelectorsArrays([application.cssSelectorsCache]);
+        } else {
             this._cssSelectors = new Array();
         }
+
         var selectorsFromFile = StyleScope.createSelectorsFromCss(cssString, cssFileName);
         this._cssSelectors = StyleScope._joinCssSelectorsArrays([this._cssSelectors, selectorsFromFile]);
     };

@@ -11,14 +11,6 @@ function pageLoaded(args) {
     viewModel = new vmModule.MainViewModel();
     page.bindingContext = viewModel;
     
-    if (platformModule.device.os === "Android") {
-        frameModule.topmost().android.actionBar.hide();
-    }
-    
-	if (platformModule.device.os === "iOS") {
-        frameModule.topmost().ios.navBarVisibility = "never";
-    }
-    
     if(MONITOR === null){
         MONITOR = new NativeScriptMonitor({
             productId: '$EQATEC_PRODUCT_KEY$',
