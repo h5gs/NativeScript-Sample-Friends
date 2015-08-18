@@ -1,5 +1,11 @@
 {
 	"nativescript": {
-		"id": "org.nativescript.sampleCuteness"
+		"id": "org.nativescript.sampleCuteness",
+		"tns-android": {
+			"version": "1.2.1"
+		},
+		"tns-ios": {
+			"version": "1.2.2"
+		}
 	}
 }
