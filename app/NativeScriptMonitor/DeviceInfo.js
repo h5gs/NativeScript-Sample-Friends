@@ -1,5 +1,5 @@
 var platform = require('platform'),
-    platformExt = require('platform-ext');
+    platformExt = require('../extensions/platform-ext');
 
 'use strict'
 
