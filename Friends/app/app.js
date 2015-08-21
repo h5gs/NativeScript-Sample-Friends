@@ -20,6 +20,9 @@ application.onLaunch = function (context) {
     }
     else if (application.ios) {
         console.log("Launched iOS application.");
+        // Workaround for a bug in the iOS runtime version 1.2.2, should be fixed with next version
+        // This constant is used in the location module but must be referenced earlier on so that the appropriate iOS framework can be loaded
+        kCLDistanceFilterNone;
     }
 };
 
