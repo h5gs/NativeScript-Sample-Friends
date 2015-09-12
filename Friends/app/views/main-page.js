@@ -13,7 +13,7 @@ function pageLoaded(args) {
     
     if(MONITOR === null){
         MONITOR = new NativeScriptMonitor({
-            productId: '$EQATEC_PRODUCT_KEY$',
+            productId: '$EQATEC_PROJECT_KEY$',
             version: '1.0'
         });
         
