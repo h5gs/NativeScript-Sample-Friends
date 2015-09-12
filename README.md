@@ -41,12 +41,6 @@ To implement all the features listed above, the sample app utilizes the followin
 - Telerik Analytics - used to store and monitor analytics data in the cloud
 - Telerik Analytics JavaScript SDK - to connect the app with Telerik Analytics
 
-NEW???
-- Telerik Analytics Cordova plugin - to collect data needed for analyses
-- Telerik Mobile Testing - used to implement tests for the mobile app
-
-OLD???
-- Custom Analytics plugin in Telerik AppBuilder.
 
 ## Requirements
 
@@ -55,7 +49,7 @@ Before you begin, you need to ensure that you have the following:
 - **An active Telerik Platform account**
 Ensure that you can log in to a Telerik Platform account. This can be a free trial account. Depending on your license you may not be able to use all app features. For more information on what is included in the different editions, check out the pricing page. All features included in the sample app work during the free trial period.
 
-- **Telerik AppBuilder** The sample app requires Telerik AppBuilder to run. This can be the in-browser client, the desktop client or the extension for Visual Studio. ???
+- **Telerik AppBuilder** The sample app requires Telerik AppBuilder to run. This can be the in-browser client, the desktop client or the extension for Visual Studio.
 
 ## Configuration
 
@@ -87,15 +81,10 @@ By default the Friends Sample is configured to use HTTP. If you want to switch t
 
 ## Running the Sample
 
-Once the app is configured, you can run it either on a real device ???or in the Telerik AppBuilder simulator.
+Once the app is configured, you can run it either on a real device or a native emulator.
 
 > Ensure that the emulator or the device that you are using has Internet connectivity when running the sample.
 
-## Screenshots
-
-![](screenshots/ios-login-screen.png)
-![](screenshots/ios-activities-stream.png)
-![](screenshots/ios-activitiy-details.png)
 
 
 
