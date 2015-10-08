@@ -36,7 +36,7 @@ To implement all the features listed above, the sample app utilizes the followin
 
 Login Screen|Activity Stream|Activity Details
 ---|---|---
-![Login Screen](https://raw.githubusercontent.com/Icenium/nativescript-sample-Friends/master/screenshots/android-login-screen.png)|![Activities stream view](https://raw.githubusercontent.com/Icenium/nativescript-sample-Friends/master/screenshots/android-activities-stream.png)|![Activity details view](https://raw.githubusercontent.com/Icenium/nativescript-sample-Friends/master/screenshots/android-activitiy-details.png)
+![Login Screen](https://raw.githubusercontent.com/Icenium/nativescript-sample-Friends/master/screenshots/android-login-screen.png)|![Activities stream view](https://raw.githubusercontent.com/Icenium/nativescript-sample-Friends/master/screenshots/android-activities-stream.png)|![Activity details view](https://raw.githubusercontent.com/Icenium/nativescript-sample-Friends/master/screenshots/android-activity-details.png)
 
 ## Requirements
 
