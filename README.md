@@ -4,6 +4,7 @@
 <a href="https://platform.telerik.com/#appbuilder/clone/https://github.com/icenium/nativescript-sample-Friends/" target="_blank"><img src="http://docs.telerik.com/platform/appbuilder/sample-apps/images/try-in-appbuilder.png" alt="Try in AppBuilder" title="Try in Telerik Platform" /></a> <a href="https://github.com/icenium/nativescript-sample-Friends/" target="_blank"><img style="padding-left:20px" src="http://docs.telerik.com/platform/appbuilder/sample-apps/images/get-github.png" alt="Get from GitHub" title="Get from GitHub"></a>
 
 * [Overview](#overview)
+* [Screenshots](#screenshots)
 * [Requirements](#requirements)
 * [Configuration](#configuration)
 * [Running the Sample](#running-the-sample)
@@ -31,6 +32,11 @@ To implement all the features listed above, the sample app utilizes the followin
 - Telerik Analytics - used to store and monitor analytics data in the cloud
 - Telerik Analytics JavaScript SDK - to connect the app with Telerik Analytics
 
+## Screenshots
+
+Login Screen|Activity Stream|Activity Details
+---|---|---
+![Login Screen](https://raw.githubusercontent.com/Icenium/nativescript-sample-Friends/master/screenshots/android-login-screen.png)|![Activities stream view](https://raw.githubusercontent.com/Icenium/nativescript-sample-Friends/master/screenshots/android-activities-stream.png)|![Activity details view](https://raw.githubusercontent.com/Icenium/nativescript-sample-Friends/master/screenshots/android-activitiy-details.png)
 
 ## Requirements
 
