@@ -11,26 +11,23 @@
 
 ## Overview
 
-This repository contains the Telerik Friends app for PhoneGap/Cordova. It is a sample mobile app demonstrating how to integrate a large gamut of Telerik Platform services into a native mobile application using the [NativeScript](http://github.com/nativescript/nativescript) framework.
+This repository contains the Telerik Friends app for NativeScript. It is a sample mobile app demonstrating how to integrate a large gamut of Telerik Platform services into a native mobile application using the [NativeScript](http://github.com/nativescript/nativescript) framework.
 
 The Telerik Friends sample app showcases these features and SDKs:
 
-- Cloud data access (Telerik Backend Services)
-- Working with files (Telerik Backend Services)
-- User registration and authentication (Telerik Backend Services)
+- [Cloud data](http://docs.telerik.com/platform/backend-services/javascript/data/introduction) access (Telerik Backend Services)
+- Working with [files](http://docs.telerik.com/platform/backend-services/javascript/files/introduction) (Telerik Backend Services)
+- User [registration](http://docs.telerik.com/platform/backend-services/javascript/users/users-register) and [authentication](http://docs.telerik.com/platform/backend-services/javascript/users/users-authenticate) (Telerik Backend Services)
 - Using custom user account fields (Telerik Backend Services)
-- Basic app analytics (Telerik Analytics)
-- Tracking feature usage (Telerik Analytics)
-
-- Authentication with social login providers (Facebook, Google, etc.) (Telerik Backend Services)
-- Authentication with AD FS (Telerik Backend Services)
+- Basic [app analytics](http://docs.telerik.com/platform/analytics/getting-started/introduction) (Telerik Analytics)
+- Tracking [feature use](http://docs.telerik.com/platform/analytics/client/reports/feature-use) (Telerik Analytics)
 
 To implement all the features listed above, the sample app utilizes the following Telerik products and SDKs:
 
-- Telerik Backend Services - this is where all data, files, and user accounts are stored in the cloud
-- Telerik Backend Services JavaScript SDK - to connect the app to Telerik Backend Services
-- Telerik Analytics - used to store and monitor analytics data in the cloud
-- Telerik Analytics JavaScript SDK - to connect the app with Telerik Analytics
+- [Telerik Backend Services](http://docs.telerik.com/platform/backend-services/)&mdash;this is where all data, files, and user accounts are stored in the cloud
+- [Telerik Backend Services JavaScript SDK](http://docs.telerik.com/platform/backend-services/javascript/getting-started-javascript-sdk)&mdash;to connect the app to Telerik Backend Services
+- [Telerik Analytics](http://docs.telerik.com/platform/analytics/)&mdash;used to store and monitor analytics data in the cloud
+- [Telerik Analytics JavaScript SDK](http://docs.telerik.com/platform/analytics/sdk/js/)&mdash;to connect the app with Telerik Analytics
 
 ## Screenshots
 
@@ -42,10 +39,10 @@ Login Screen|Activity Stream|Activity Details
 
 Before you begin, you need to ensure that you have the following:
 
-- **An active Telerik Platform account**
+- **A Telerik Platform account**
 Ensure that you can log in to a Telerik Platform account. This can be a free trial account. Depending on your license you may not be able to use all app features. For more information on what is included in the different editions, check out the pricing page. All features included in the sample app work during the free trial period.
 
-- **Telerik AppBuilder** The sample app requires Telerik AppBuilder to run. This can be the in-browser client, the desktop client or the extension for Visual Studio.
+- **Telerik AppBuilder** The sample app requires Telerik AppBuilder to run. This can be the in-browser client, the desktop client, the extension for Visual Studio, or the command-line interface.
 
 ## Configuration
 
@@ -89,12 +86,3 @@ To run it, follow the steps in the product's documentation: [Running Apps on Dev
 
 > Ensure that the emulator or the device that you are using has Internet connectivity when running the sample.
 
-
-
-
-
-
-
-
-
- 
