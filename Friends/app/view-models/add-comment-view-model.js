@@ -14,8 +14,6 @@ var addCommentViewModel = (function (_super) {
 
     function addCommentViewModel (source) {
         _super.call(this);
-        this._activity = new observable.Observable();
-        this._commentText = new observable.Observable();
         this._commentText = "";
     }
 
