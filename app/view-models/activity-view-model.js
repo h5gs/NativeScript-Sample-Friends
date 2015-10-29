@@ -1,10 +1,3 @@
-var __extends = this.__extends || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
-};
-
 var AppSettings = require("application-settings");
 var observable = require("data/observable");
 var observableArray = require("data/observable-array");
@@ -19,6 +12,7 @@ var ActivityViewModel = (function (_super) {
         this._activity = new observable.Observable();
         this._comments = new observableArray.ObservableArray(); 
         this._isLoading = false;
+        this._commentsPromise = null;
     }
     
     Object.defineProperty(ActivityViewModel.prototype, "isLoading", {
@@ -51,9 +45,10 @@ var ActivityViewModel = (function (_super) {
         get: function () 
         {
             this.isLoading = true;
-            
             var that = this;
-            var commentsData = EVERLIVE.data("Comments");
+
+            if (!this._commentsPromise){
+                var commentsData = EVERLIVE.data("Comments");
             
             var query = new Everlive.Query();
             query.where().eq("ActivityId", that._activity.Id);
@@ -71,25 +66,27 @@ var ActivityViewModel = (function (_super) {
                }
             };
             
-            commentsData.expand(expandExp).get(query)
-            .then(function(data) {
-                if (data && data.count !== 0)
-                {
-                    for (i = 0; i < data.count; i++)
+            this._commentsPromise = commentsData.expand(expandExp).get(query);
+            }
+
+            this._commentsPromise
+                .then(function(data) {
+                    if (data && data.count !== 0)
                     {
-                        var activityItem = new activityItemViewModel.ActivityItemViewModel(data.result[i]);
-                        data.result[i] = activityItem;
+                        for (i = 0; i < data.count; i++)
+                        {
+                            var activityItem = new activityItemViewModel.ActivityItemViewModel(data.result[i]);
+                            data.result[i] = activityItem;
+                        }
+
+                        that._comments.push(data.result);
                     }
-                                        
-                    that._comments.push(data.result);
-                }
-                that.isLoading = false;
-            },
-            function(error) {
-                alert(JSON.stringify(error));
-                that.isLoading = false;
-            });
-            
+                    that.isLoading = false;
+                },
+                function(error) {
+                    alert(JSON.stringify(error));
+                    that.isLoading = false;
+                });
             return this._comments;
         },
         enumerable: true,
