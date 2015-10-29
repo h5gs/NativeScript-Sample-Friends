@@ -44,6 +44,7 @@ var ActivitiesViewModel = (function (_super) {
         this._source = source;
         this._activities = new observableArray.ObservableArray(); 
         this._isLoading = false;
+        this.set("isLoading", true);
     }
     
     Object.defineProperty(ActivitiesViewModel.prototype, "isLoading", {
@@ -60,10 +61,6 @@ var ActivitiesViewModel = (function (_super) {
 
     Object.defineProperty(ActivitiesViewModel.prototype, "activities", {
         get: function () {
-			if (this.isLoading === true) {
-				return this._activities;
-			}
-			
             this.isLoading = true;
             var that = this;
 

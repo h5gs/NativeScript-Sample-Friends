@@ -14,7 +14,6 @@ var AddActivityViewModel = (function (_super) {
 
     function AddActivityViewModel(source) {
         _super.call(this);
-        this._activity = new observable.Observable();
         this._activity = "";
     }
 
