@@ -9,7 +9,7 @@
 * [Configuration](#configuration)
 * [Running the Sample](#running-the-sample)
 
-## Overview
+# Overview
 
 This repository contains the Telerik Friends app for NativeScript. It is a sample mobile app demonstrating how to integrate a large gamut of Telerik Platform services into a native mobile application using the [NativeScript](http://github.com/nativescript/nativescript) framework.
 
@@ -29,13 +29,13 @@ To implement all the features listed above, the sample app utilizes the followin
 - [Telerik Analytics](http://docs.telerik.com/platform/analytics/)&mdash;used to store and monitor analytics data in the cloud
 - [Telerik Analytics JavaScript SDK](http://docs.telerik.com/platform/analytics/sdk/js/)&mdash;to connect the app with Telerik Analytics
 
-## Screenshots
+# Screenshots
 
 Login Screen|Activity Stream|Activity Details
 ---|---|---
 ![Login Screen](https://raw.githubusercontent.com/Icenium/nativescript-sample-Friends/master/screenshots/android-login-screen.png)|![Activities stream view](https://raw.githubusercontent.com/Icenium/nativescript-sample-Friends/master/screenshots/android-activities-stream.png)|![Activity details view](https://raw.githubusercontent.com/Icenium/nativescript-sample-Friends/master/screenshots/android-activity-details.png)
 
-## Requirements
+# Requirements
 
 Before you begin, you need to ensure that you have the following:
 
@@ -44,7 +44,7 @@ Ensure that you can log in to a Telerik Platform account. This can be a free tri
 
 - **Telerik AppBuilder** The sample app requires Telerik AppBuilder to run. This can be the in-browser client, the desktop client, the extension for Visual Studio, or the command-line interface.
 
-## Configuration
+# Configuration
 
 The Friends sample app comes fully functional, but to see it in action you must link it to your own Telerik Platform account.
 
@@ -56,7 +56,7 @@ The Friends sample app comes fully functional, but to see it in action you must 
 5. Take note of your API Key.
 6. Go back to the AppBuilder project and continue setting up as explained in the next sections.
 
-### API Key for Telerik Backend Services
+## API Key for Telerik Backend Services
 
 This is a unique string that links the sample mobile app to a project in Telerik Backend Services where all the data is read from/saved. When creating the project, you must base it on the Friends sample Backend Services project that has all the necessary data prepopulated.
 
@@ -67,18 +67,18 @@ You must use this project's API key. To set it in the app:
 
 > If you happen to break the structure of the automatically generated Friends sample project, you can delete it and a fresh instance will be created again for you automatically. Alternatively, you could create a new project and choose to start from a Friends template, instead of starting from a blank project.
 
-### (Optional) Project Key for Telerik Analytics
+## (Optional) Project Key for Telerik Analytics
 
 This is a unique string that links the sample mobile app to a Telerik Analytics project in your account. If you do not set this the sample will still work, but no analytics data will be collected.
 	
 1. Open the `Friends/app/views/main-page.js` file.
 2. Replace `$EQATEC_PROJECT_KEY$` with the Project Key of your Friends Analytics project.
 
-### HTTPS Connections
+## HTTPS Connections
 
 By default the Friends Sample is configured to use HTTP. If you want to switch to HTTPS, update the `global.BS_SCHEME` setting in  `Friends/app/app.js` to `https`.
 
-## Running the Sample
+# Running the Sample
 
 Once the app is configured, you can run it either on a real device or a native emulator.
 
