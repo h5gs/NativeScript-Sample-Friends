@@ -93,7 +93,7 @@ To run it, follow the steps in the product's documentation: [Running Apps on Dev
 
 > Ensure that the emulator or the device that you are using has Internet connectivity when running the sample.
 
-
+![](https://ga-beacon.appspot.com/UA-111455-24/nativescript/sample-friends?pixel) 
 
 
 
