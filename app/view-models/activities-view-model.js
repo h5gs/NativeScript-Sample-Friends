@@ -1,10 +1,3 @@
-var __extends = this.__extends || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    __.prototype = b.prototype;
-    d.prototype = new __();
-};
-
 var observable = require("data/observable");
 var observableArray = require("data/observable-array");
 var activityItemViewModel = require("./activity-item-view-model");
@@ -36,17 +29,18 @@ var dateConverter = {
 }
 
 var ActivitiesViewModel = (function (_super) {
-    
+
     __extends(ActivitiesViewModel, _super);
-    
+
     function ActivitiesViewModel(source) {
         _super.call(this);
         this._source = source;
-        this._activities = new observableArray.ObservableArray(); 
+        this._activities = new observableArray.ObservableArray();
         this._isLoading = false;
         this.set("isLoading", true);
+        this._activitiesPromise = null;
     }
-    
+
     Object.defineProperty(ActivitiesViewModel.prototype, "isLoading", {
         get: function () {
             return this._isLoading;
@@ -64,50 +58,53 @@ var ActivitiesViewModel = (function (_super) {
             this.isLoading = true;
             var that = this;
 
-            var expandExp = {
-               "UserId":{
-                  "ReturnAs":"User",
-                  "TargetTypeName":"Users",
-                  "Expand":{
-                     "Picture":{
-                        "TargetTypeName":"System.Files"
-                     }
-                  }
-               },
-               "Picture":{
-                  "ReturnAs":"Picture",
-                  "SingleField":"Uri",
-                  "TargetTypeName":"System.Files"
-               }
-            };
+            if (!this._activitiesPromise){
+                var expandExp = {
+                   "UserId":{
+                      "ReturnAs":"User",
+                      "TargetTypeName":"Users",
+                      "Expand":{
+                         "Picture":{
+                            "TargetTypeName":"System.Files"
+                         }
+                      }
+                   },
+                   "Picture":{
+                      "ReturnAs":"Picture",
+                      "SingleField":"Uri",
+                      "TargetTypeName":"System.Files"
+                   }
+                };
 
-            var data = EVERLIVE.data('Activities');
-            var query = new Everlive.Query();
-            query.orderDesc('CreatedAt');
-            
-            data.expand(expandExp).get(query)
-            .then(function(data) {
-                for(var i = 0; i < data.result.length; i++){
-                    data.result[i].dateConverter = dateConverter;
-                    var activityItem = new activityItemViewModel.ActivityItemViewModel(data.result[i]);
+                var data = EVERLIVE.data('Activities');
+                var query = new Everlive.Query();
+                query.orderDesc('CreatedAt');
 
-                    data.result[i] = activityItem;
-                }
+                this._activitiesPromise = data.expand(expandExp).get(query);
+            }
 
-                that._activities.push(data.result); 
+            this._activitiesPromise
+                .then(function(data) {
+                    for(var i = 0; i < data.result.length; i++){
+                        data.result[i].dateConverter = dateConverter;
+                        var activityItem = new activityItemViewModel.ActivityItemViewModel(data.result[i]);
 
-                that.isLoading = false;
+                        data.result[i] = activityItem;
+                    }
+
+                    that._activities.push(data.result);
+
+                    that.isLoading = false;
             }, function(error) {
                 that.isLoading = false;
                 alert("Activities can't be retrieved");
-            });      
-
-            return this._activities;        
+            });
+            return this._activities;
         },
-            enumerable: true,
-            configurable: true
+        enumerable: true,
+        configurable: true
     });
-    
+
     return ActivitiesViewModel;
 })(observable.Observable);
 
