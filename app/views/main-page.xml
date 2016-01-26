@@ -1,4 +1,4 @@
-<Page xmlns="http://www.nativescript.org/tns.xsd" loaded="pageLoaded" actionBarHidden="true">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" actionBarHidden="true">
     <GridLayout>
         <StackLayout>
             <Image src="~/res/friends.png" cssClass="app-logo" />
