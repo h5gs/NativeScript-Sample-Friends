@@ -15,9 +15,9 @@ cache.maxRequests = 5;
 cache.enableDownload();
 
 var ActivityItemViewModel = (function (_super){
-    
+
     __extends(ActivityItemViewModel, _super);
-    
+
     function ActivityItemViewModel(source) {
         _super.call(this);
         this._source = source;
@@ -34,14 +34,14 @@ var ActivityItemViewModel = (function (_super){
            return !!this._source.Picture;
         }
     });
-    
+
     Object.defineProperty(ActivityItemViewModel.prototype, "pictureImageHeight", {
         get: function () {
            var height = platformModule.screen.mainScreen.heightPixels;
            return height * 0.15;
         }
     });
-    
+
     Object.defineProperty(ActivityItemViewModel.prototype, "pictureImageSource", {
         get: function () {
             var that = this;
@@ -51,7 +51,7 @@ var ActivityItemViewModel = (function (_super){
                     var screenWidth = platformModule.screen.mainScreen.widthPixels;
                     var responsiveImagesUrl = getResponsiveUrl(url, screenWidth);
                     var cachedImg = cache.get(responsiveImagesUrl);
-                    
+
                     if (cachedImg) {
                         that._pictureImageSource = cachedImg;
                     } else {
@@ -59,7 +59,7 @@ var ActivityItemViewModel = (function (_super){
                             key: responsiveImagesUrl,
                             url: responsiveImagesUrl,
                             completed: function (result, key) {
-                                if (responsiveImagesUrl === key) {                                    
+                                if (responsiveImagesUrl === key) {
                                     that._pictureImageSource = result;
                                     that.notify({ object: that, eventName: observable.Observable.propertyChangeEvent, propertyName: "pictureImageSource", value: that._pictureImageSource });
                                 }
@@ -71,17 +71,17 @@ var ActivityItemViewModel = (function (_super){
             return this._pictureImageSource;
         }
     });
-    
+
     Object.defineProperty(ActivityItemViewModel.prototype, "userName", {
         get: function () {
             if (this._source) {
                 this._userName = this._source.User.DisplayName;
                 this.notify({ object: this, eventName: observable.Observable.propertyChangeEvent, propertyName: "userName", value: this._userName });
             }
-            return this._userName;        
+            return this._userName;
         }
     });
-    
+
     Object.defineProperty(ActivityItemViewModel.prototype, "avatarImageSource", {
         get: function () {
 
@@ -93,7 +93,7 @@ var ActivityItemViewModel = (function (_super){
             }
             else if (this._source && !this._avatarImageSource) {
                 var responsiveImagesUrl = getResponsiveUrl(url, 100);
-                
+
                 if (cache) {
                     var cachedImg = cache.get(responsiveImagesUrl);
                     if (cachedImg) {
@@ -104,7 +104,7 @@ var ActivityItemViewModel = (function (_super){
                             key: responsiveImagesUrl,
                             url: responsiveImagesUrl,
                             completed: function (result, key) {
-                                if (responsiveImagesUrl === key) {                                    
+                                if (responsiveImagesUrl === key) {
                                     that._avatarImageSource = result;
                                     that.notify({ object: that, eventName: observable.Observable.propertyChangeEvent, propertyName: "avatarImageSource", value: that._avatarImageSource });
                                 }
@@ -113,13 +113,11 @@ var ActivityItemViewModel = (function (_super){
                     }
                 }
             }
-            
-            alert();
-            
+
             return this._avatarImageSource;
         }
     });
-    
+
     Object.defineProperty(ActivityItemViewModel.prototype, "defaultAvatarImageSource", {
         get: function () {
             var avatarImage = imageSource.fromFile("~/res/avatar.png");
@@ -128,16 +126,16 @@ var ActivityItemViewModel = (function (_super){
         enumerable: true,
         configurable: true
     });
-   
+
     return ActivityItemViewModel;
 })(observable.Observable);
 
-//ScaleFactor define how many times the width of the image to be smaller than the screen width. Height is automatically adjusted. 
+//ScaleFactor define how many times the width of the image to be smaller than the screen width. Height is automatically adjusted.
 function getResponsiveUrl (url, targetWidth) {
     if (typeof(url) === 'undefined' && typeof(targetWidth) === 'undefined') {
         return '';
     }
-    
+
     // if using custom BS_URL for testing purposes, return the original url
     if (BS_URL) {
         return url;
