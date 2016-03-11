@@ -83,7 +83,7 @@ This is a unique string that links the sample mobile app to a Telerik Analytics 
 
 ### HTTPS Connections
 
-By default the Friends Sample is configured to use HTTP. If you want to switch to HTTPS, update the `global.BS_SCHEME` setting in  `/app/app.js` to `https`.
+By default the Friends Sample is configured to use HTTPS. If you want to switch to HTTP, update the `global.BS_SCHEME` setting in  `/app/app.js` to `http`.
 
 ## Running the Sample
 
