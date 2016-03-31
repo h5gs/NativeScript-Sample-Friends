@@ -12,17 +12,16 @@ var validationModule = require("../utils/validate");
 var AppSettings = require("application-settings");
 
 var MainViewModel = (function (_super){
-    
+
     __extends(MainViewModel, _super);
-    
+
     function MainViewModel(source) {
         _super.call(this);
         this._source = source;
         this._isLoading = false;
-        
         // Initialize Everlive SDK
         var everliveOptions = {
-                                  apiKey: BS_API_KEY,
+                                  apiKey: APP_ID,
                                   scheme: BS_SCHEME,
                                   token: AppSettings.getString(TOKEN_DATA_KEY)
                               };
@@ -34,23 +33,23 @@ var MainViewModel = (function (_super){
         // Initialize Everlive SDK
         EVERLIVE = new Everlive(everliveOptions);
     }
-    
+
    MainViewModel.prototype.logIn = function() {
         var that = this;
-       
+
         return new Promise(function (resolve, reject) {
             if (validationModule.validate(that._email, [validationModule.minLengthConstraint,validationModule.validEmailConstraint],"Invalid email") &&
                validationModule.validate(that._password, [validationModule.minLengthConstraint],"Invalid password")) {
 
                 that.set("isLoading", true);
 
-                EVERLIVE.Users.login(that._email, that._password, 
+                EVERLIVE.Users.login(that._email, that._password,
                 function (data) {
                     if (typeof(data.result) !== 'undefined' && typeof(data.result.principal_id) !== 'undefined' && typeof(data.result.access_token) !== 'undefined') {
                         //Store in local storage
                         AppSettings.setString(TOKEN_DATA_KEY, data.result.access_token);
                         AppSettings.setString(USER_ID, data.result.principal_id);
-                        
+
                         resolve();
                     } else {
                         reject();
@@ -61,10 +60,10 @@ var MainViewModel = (function (_super){
                     reject(error.message);
                     that.set("isLoading", false);
                 });
-            }            
+            }
         });
     };
-    
+
     Object.defineProperty(MainViewModel.prototype, "isLoading", {
         get: function () {
             return this._isLoading;
@@ -86,7 +85,7 @@ var MainViewModel = (function (_super){
         enumerable: true,
         configurable: true
     });
-    
+
     Object.defineProperty(MainViewModel.prototype, "password", {
         get: function () {
             return this._password;
@@ -97,7 +96,7 @@ var MainViewModel = (function (_super){
         enumerable: true,
         configurable: true
     });
-    
+
     return MainViewModel;
 })(observable.Observable);
 
