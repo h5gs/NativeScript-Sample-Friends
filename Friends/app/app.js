@@ -4,8 +4,8 @@ application.mainModule = "./views/main-page";
 /*
  * Define constants which we will use across the application
  */
-global.BS_API_KEY = "$EVERLIVE_API_KEY$";
-global.BS_SCHEME = "http";
+global.APP_ID = "$APP_ID$";
+global.BS_SCHEME = "https";
 global.BS_URL = "";
 global.TOKEN_DATA_KEY = "authenticationToken";
 global.USER_ID = "userId";

@@ -3,7 +3,7 @@
         <GridLayout cssClass="header-container" columns="auto, *">
             <Image src="~/res/back-dark.png" tap="goBack" cssClass="header-button align-left ios"/>
             <Image src="~/res/back-light.png" tap="goBack" cssClass="header-button align-left android"/>
-            <Label text="Sign up" cssClass="header-context-label align-left android" col="1"/> 
+            <Label text="Sign up" cssClass="header-context-label align-left android" col="1"/>
             <Label text="Friends" colSpan="2" cssClass="header-context-label align-center ios" />
         </GridLayout>
         <StackLayout cssClass="horizontal-line ios" row="1"></StackLayout>
@@ -17,7 +17,7 @@
                 </GridLayout>
                 <TextField id="about" cssClass="text-input" hint="about" text="{{ about }}" row="4" />
                 <Button text="Sign up" id="register" tap="signUp" cssClass="signup-button" row="5" verticalAlignment="bottom" />
-        </GridLayout >
+        </GridLayout>
         <AbsoluteLayout  cssClass="activity-indicator" row="3">
           <ActivityIndicator busy="{{ isLoading }}" cssClass="activity-indicator" />
         </AbsoluteLayout>
