@@ -141,7 +141,7 @@ function getResponsiveUrl (url, targetWidth) {
         return url;
     }
 
-    return "https://bs1.cdn.telerik.com/image/v1/" + BS_API_KEY + "/resize=w:" + targetWidth + "/" + url;
+    return "https://bs1.cdn.telerik.com/image/v1/" + APP_ID + "/resize=w:" + targetWidth + "/" + url;
 }
 
 exports.ActivityItemViewModel = ActivityItemViewModel;

@@ -1,1 +1,4 @@
 platforms/
+.ab
+*.apk
+*.ipa
