@@ -4,7 +4,7 @@ var device = (function () {
     Object.defineProperty(device, "language", {
         get: function () {
             if (!device._language) {
-                var languages = NSLocale.preferredLanguages();
+                var languages = NSLocale.preferredLanguages;
                 device._language = languages[0];
             }
             return device._language;
