@@ -4,7 +4,7 @@ application.mainModule = "./views/main-page";
 /*
  * Define constants which we will use across the application
  */
-global.APP_ID = "$APP_ID$";
+global.APP_ID = "u4s1wvptmfy3h6zn";
 global.BS_SCHEME = "https";
 global.BS_URL = "";
 global.TOKEN_DATA_KEY = "authenticationToken";
