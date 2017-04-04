@@ -18,3 +18,8 @@ tns platform add ios
 tns prepare ios
 tns build ios
 
+tns platform add android
+tns prepare android
+tns build android
+
+
