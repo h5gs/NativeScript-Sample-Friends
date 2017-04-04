@@ -10,5 +10,7 @@ tns --version
 
 # Prepare NativeScript Project
 echo "******** Prepare NativeScript iOS Project *************"
-cd Friends
+ls
+pwd
+cd ./Friends
 tns prepare ios
