@@ -16,3 +16,5 @@ cd ./Friends
 tns platform add ios
 
 tns prepare ios
+tns build ios
+
