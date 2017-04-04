@@ -13,4 +13,6 @@ echo "******** Prepare NativeScript iOS Project *************"
 ls
 pwd
 cd ./Friends
+tns platform add ios
+
 tns prepare ios
